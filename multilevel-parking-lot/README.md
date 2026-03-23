@@ -213,20 +213,3 @@ Shows:
 3. **Liskov Substitution**: Level manages different slot types uniformly
 4. **Interface Segregation**: Clean, focused methods
 5. **Dependency Inversion**: ParkingLot depends on abstractions (Level, Slot)
-
-## Viva Questions & Answers
-
-**Q: How do you handle conflicts when multiple vehicles arrive simultaneously?**
-A: The system finds the first available slot in level order. In a real system, we'd use a queue and timestamp-based ordering.
-
-**Q: What happens if a vehicle tries to park when no slots are available?**
-A: The park() method returns null after checking all levels, and an error message is displayed.
-
-**Q: Why is billing based on slot type, not vehicle type?**
-A: This incentivizes people to use appropriate slots and makes the system fair - if you occupy a premium slot, you pay premium rates.
-
-**Q: Can a bike park in a large slot?**
-A: Yes, but it pays the large slot rate (₹200/hour). This encourages choosing the right slot size.
-
-**Q: How do you calculate the parking duration?**
-A: Simple: (exitTime - entryTime) / 3600000 milliseconds per hour. Minimum 1 hour charge.
